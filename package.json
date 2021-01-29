@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@axe-core/react": "^4.1.1-alpha.89",
     "babel-plugin-styled-components": "^1.12.0",
     "next": "10.0.5",
     "prop-types": "^15.7.2",
