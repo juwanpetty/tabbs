@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
 
-function App() {
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: minmax(auto, 280px) 3fr;
+  height: 100vh;
+`;
+
+const Main = styled.main``;
+
+const Aside = styled.aside`
+  padding: 16px;
+  background: #f8f8f9;
+  border-right: 1px solid #e0e3e6;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Aside>
+        {/* <!-- start sidebar content --> */}
+        <Sidebar />
+        {/* <!-- end sidebar content --> */}
+      </Aside>
+      <Main>
+        <Header />
+        {/* <!-- start main content --> */}
+        <p>Main content.</p>
+        {/* <!-- end main content --> */}
+      </Main>
+    </Container>
   );
-}
+};
 
 export default App;
