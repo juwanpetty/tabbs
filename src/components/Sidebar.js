@@ -2,8 +2,8 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Icon from '../Icon/Icon';
-import Spacer from '../Spacer/Spacer';
+import Icon from './Icon';
+import Spacer from './Spacer';
 
 const SidebarContainer = styled.ul`
   margin: 0;

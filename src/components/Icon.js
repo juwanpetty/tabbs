@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import * as ReactIcon from '../../assets/icons';
+import * as ReactIcon from '../assets/icons';
 
 export const Container = styled.span`
   display: flex;

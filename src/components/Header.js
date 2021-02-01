@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Spacer from './Spacer';
+import Button from './Button';
 
 const Container = styled.div`
   height: 56px;
@@ -17,7 +19,10 @@ const Header = () => {
   return (
     <Container>
       <h1>Overview</h1>
-      <div className="header-controls">Header controls</div>
+      <div className="header-controls">
+        <Spacer size={40} />
+        <Button icon="Add" onClick={() => console.log('onClick')} />
+      </div>
     </Container>
   );
 };

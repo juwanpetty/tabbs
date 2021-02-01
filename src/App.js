@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Sidebar from './components/Sidebar/Sidebar';
-import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 
 const Container = styled.div`
   display: grid;
