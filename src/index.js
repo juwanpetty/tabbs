@@ -6,6 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require
+  const axe = require('@axe-core/react');
+  axe(React, ReactDOM, 1000);
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "webextensions": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -26,6 +27,10 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
     "prettier/prettier": ["error", { "singleQuote": true }],
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "variables": false }
+    ],
     "no-unused-vars": "warn"
   },
   "ignorePatterns": ["node_modules/"]

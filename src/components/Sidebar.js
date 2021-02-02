@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Icon from './Icon';
@@ -21,18 +21,27 @@ const SidebarItemContainer = styled.li`
     font-weight: 500;
     line-height: 20px;
     text-decoration: none;
+    color: black;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 8px 16px;
     border-radius: 6px;
+
+    &:hover {
+      background: #ededed50;
+    }
   }
 
   button {
     border: none;
     cursor: pointer;
     background: transparent;
+  }
+
+  a.active {
+    background: #ededed;
   }
 `;
 
@@ -45,10 +54,10 @@ const Sidebar = () => {
       <SidebarItem icon="InsertChartOutlined" href="/">
         Overview
       </SidebarItem>
-      <SidebarItem icon="Snooze" href="/">
+      <SidebarItem icon="Snooze" href="/snooze">
         Snoozed
       </SidebarItem>
-      <SidebarItem icon="Collection" href="/">
+      <SidebarItem icon="Collection" href="/collection">
         Saved
       </SidebarItem>
     </SidebarContainer>
@@ -57,7 +66,7 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-const SidebarItem = ({ as, href, icon, isButton, children }) => {
+const SidebarItem = ({ href, icon, isButton, children }) => {
   const contentMarkup = isButton ? (
     <button type="button">
       <Icon icon={icon} />
@@ -65,18 +74,17 @@ const SidebarItem = ({ as, href, icon, isButton, children }) => {
       {children}
     </button>
   ) : (
-    <Link as={as} to={href}>
+    <NavLink exact to={href}>
       <Icon icon={icon} />
       <Spacer size={8} />
       {children}
-    </Link>
+    </NavLink>
   );
 
   return <SidebarItemContainer>{contentMarkup}</SidebarItemContainer>;
 };
 
 SidebarItem.propTypes = {
-  as: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.string.isRequired,
   isButton: PropTypes.bool,
@@ -84,7 +92,6 @@ SidebarItem.propTypes = {
 };
 
 SidebarItem.defaultProps = {
-  as: null,
   href: null,
   isButton: false,
 };

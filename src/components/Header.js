@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import Spacer from './Spacer';
 import Button from './Button';
 
 const Container = styled.div`
   height: 56px;
-  padding: 0 32px;
-  border-bottom: 1px solid #e0e3e6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,6 +10,19 @@ const Container = styled.div`
     font-size: 14px;
     font-weight: 500;
   }
+
+  > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 40px;
+    align-items: center;
+  }
+`;
+
+const LeftControls = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 16px;
 `;
 
 const Header = () => {
@@ -20,8 +30,34 @@ const Header = () => {
     <Container>
       <h1>Overview</h1>
       <div className="header-controls">
-        <Spacer size={40} />
-        <Button icon="Add" onClick={() => console.log('onClick')} />
+        <LeftControls>
+          <Button
+            type="button"
+            icon="Save"
+            onClick={() => console.log('onClick')}
+          />
+          <Button
+            type="button"
+            icon="CreateNewFolder"
+            onClick={() => console.log('onClick')}
+          />
+          <Button
+            type="button"
+            icon="Sort"
+            onClick={() => console.log('onClick')}
+          />
+          <Button
+            type="button"
+            icon="DeleteSweep"
+            onClick={() => console.log('onClick')}
+          />
+        </LeftControls>
+
+        <Button
+          type="button"
+          icon="Add"
+          onClick={() => console.log('onClick')}
+        />
       </div>
     </Container>
   );
